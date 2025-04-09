@@ -10,6 +10,9 @@ backend/
 ├── cmd/                     # entry points
 ├── configs/                 # Configuration management
 ├── internal/                # private codes
+│   ├─ feature1
+│   ├─ feature2
+│   └─ feature3
 ├── migrations/              # database migrations
 ├── pkg/                     # public, reusable utilities
 ├── scripts/                 # helper scripts
@@ -18,6 +21,7 @@ backend/
 ├── docs/                    # documentation
 ...
 ```
+## Flow hoạt động (docs/flow/flow.md)
 
 ## giải thích Makefile
 ```bash

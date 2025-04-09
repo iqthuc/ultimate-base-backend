@@ -1,4 +1,5 @@
-backend/
+```
+root/
 ├── api/                     # Định nghĩa API
 │   ├── proto/               # gRPC Protocol Buffers definitions
 │   ├── openapi/             # OpenAPI/Swagger specifications
@@ -15,18 +16,17 @@ backend/
 │   ├── config.local.yaml    # Cấu hình môi trường cục bộ (gitignore)
 │   └── config.docker.yaml   # Cấu hình cho môi trường docker
 │
-├── internal/                # Mã nguồn private của project
+├── internal/feature1/       # mỗi feature sẽ bao gồm các layer của riêng nó
 │   ├── domain/              # Domain layer, chứa core business logic
-│   │   ├── entity/          # Domain entities
-│   │   ├── repository/      # Repository interfaces
-│   │   ├── service/         # Domain services
-│   │   └── errors/          # Domain-specific errors
+│   │   ├── entity/          # chứa các struct đại diện cho các core business object
+│   │   ├── repository/      # định nghĩa các interface để truy cập dữ liệu
+│   │   ├── service/         # logic liên quan đến domain hoặc nhiều entity, pure business logic (ví dụ totalPrice cho cart (interface))
+│   │   └── constant/        # Domain-specific constants
 │   │
-│   ├── usecase/             # Application use cases
-│   │   ├── auth/            # Use cases xác thực
-│   │   ├── user/            # Use cases người dùng
-│   │   ├── product/         # Use cases sản phẩm
-│   │   └── common/          # Interface chung cho use cases
+│   ├── use_case/             # Application use cases
+│   │   ├── auth/
+│   │   ├── user/
+│   │   └── product/
 │   │
 │   ├── delivery/            # Delivery layer (API handlers)
 │   │   ├── http/            # HTTP handlers
@@ -39,7 +39,7 @@ backend/
 │   │       ├── resolvers/   # GraphQL resolvers
 │   │       └── schema.go    # GraphQL schema configuration
 │   │
-│   ├── infrastructure/      # Implementations của interfaces
+│   └── infrastructure/      # Implementations của interfaces
 │       ├── repository/      # Repository implementations
 │       │   ├── postgres/    # PostgreSQL repositories
 │       │   └── mongodb/     # MongoDB repositories
@@ -110,3 +110,4 @@ backend/
 ├── go.sum
 ├── Makefile                 # Command shortcuts
 └── README.md
+```
